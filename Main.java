@@ -1,15 +1,22 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
+import Users.Admin;
+
 public class Main{
   private static final String ADMIN_PIN = "admin";
   private static final Scanner input = new Scanner(System.in);
 
   private static void adminLogin(){
+    ArrayList<Admin> admin = getAdmins();
+    System.out.print("Enter Admin ID: ");
+    String name = input.nextLine().trim();
+
+    for()
     System.out.print("Enter Admin PIN: ");
     String pin = input.nextLine().trim();
     if(pin.equals(ADMIN_PIN)){
-
+      Users.Admin.adminMenu();
     }else{
       System.out.println("Incorrect PIN. Access Denied.");
     }                
@@ -28,7 +35,7 @@ public class Main{
       System.out.println("=".repeat(50));
       System.out.print("Select choice: ");
 
-      int choice = Integer.parseInt(input.nextLine().trim());
+      int choice = input.nextInt();
 
       switch (choice) {
         case 1 -> adminLogin();
